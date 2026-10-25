@@ -13,3 +13,9 @@ Flutter ile hazırlanmış antika envanter ve açık artırma yönetim uygulamas
 Yeni hesaplar `auth.users` üzerinde tutulur; kayıt sırasında girilen ad, kullanıcı metadata alanında `full_name` olarak saklanır. Ürün, açık artırma ve satış verileri giriş yapmış kullanıcılar arasında ortaktır. Satış kaydı `satis_olustur` veritabanı fonksiyonuyla atomik olarak oluşturulur ve ürün stoğu aynı işlemde azaltılır.
 
 Müşteriler ekranı, satışlardaki alıcı adlarına göre oluşturulur; alıcı adı boş olan satışlar müşteri listesinde gösterilmez. Stok hareketleri ekranının çalışması için güncel SQL şemasındaki `stok_hareketleri` tablosu ve tetikleyici gereklidir. Şema mevcut stokları bir başlangıç kaydı olarak içe aktarır; sonrasında oluşan stok girişlerini ve çıkışlarını otomatik kaydeder.
+
+## Web'de yayınlama
+
+GitHub Actions, `main` dalına her gönderimde Flutter web sürümünü oluşturup GitHub Pages'e yayınlar. Depo ayarlarında **Settings > Pages > Build and deployment > Source** seçeneğinin **GitHub Actions** olduğundan emin olun. Yayın adresi `https://yusufalparslan06.github.io/Antika/` olacaktır.
+
+Şifre sıfırlama bağlantısının yayınlanan sitede çalışması için bu tam adresi Supabase **Authentication > URL Configuration > Redirect URLs** bölümüne ekleyin: `https://yusufalparslan06.github.io/Antika/reset-password`.
